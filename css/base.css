@@ -68,7 +68,7 @@ select {
     --muted: color-mix(in srgb, var(--ink) 65%, white);
     --link: var(--blue-suit);
     --link-hover: color-mix(in srgb, var(--blue-suit) 80%, black);
-    --border: color-mix(in srgb, var(--ink) 12%, white);
+    --border: color-mix(in srgb, var(--ink) 80%, rgb(255, 255, 255));
 
     /* Layout */
     --radius: 16px;
@@ -95,7 +95,6 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--text);
-    background: var(--bg);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
@@ -132,7 +131,7 @@ li {
 /* Links */
 a {
     color: var(--link);
-    font-weight: 600;
+    font-weight: 700;
     text-decoration: none;
     text-underline-offset: 0.2em;
 }
@@ -140,7 +139,7 @@ a {
 a:hover,
 a:focus-visible {
     color: var(--link-hover);
-    text-decoration: underline;
+
 }
 
 /* Visible focus */
