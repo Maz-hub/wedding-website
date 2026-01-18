@@ -173,9 +173,6 @@
     padding-bottom: clamp(3rem, 6vw, 6rem);
     padding-left: 1rem;
     padding-right: 1rem;
-
-
-
 }
 
 .welcome-content {
@@ -186,14 +183,109 @@
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
-
-    background-image: url("../img/divider.svg");
-    background-repeat: no-repeat;
-    background-position: left center;
-    background-size: 100% auto;
 }
 
 .welcome-content p {
     font-size: 1rem;
     line-height: 1.7;
+}
+
+/* Divider */
+
+.section-divider {
+    width: min(100% - 2rem, 1000px);
+    margin: clamp(1.25rem, 3vw, 2.25rem) auto;
+}
+
+
+.section-divider img {
+    width: 100%;
+    height: auto;
+}
+
+/* Info section (Getting there) */
+
+.info-section {
+    padding: clamp(2.5rem, 6vw, 5rem) 1rem;
+}
+
+.info-grid {
+    width: min(100% - 2rem, 1000px);
+    margin-inline: auto;
+
+    display: grid;
+    gap: var(--space-6);
+
+}
+
+.info-title-wrapper {
+    position: relative;
+    display: grid;
+    place-items: center;
+    margin-bottom: 1rem;
+}
+
+.info-icon {
+    position: absolute;
+
+    /* push it further left */
+    left: clamp(-6rem, -8vw, -10rem);
+    top: clamp(-1.4rem, -1vw, -1rem);
+
+    /* bigger everywhere */
+    width: clamp(6.5rem, 12vw, 10rem);
+    height: auto;
+
+    opacity: 1;
+    z-index: 0;
+    pointer-events: none;
+}
+
+
+@media (max-width: 600px) {
+    .info-icon {
+        left: -2.5rem;
+        top: -0.7rem;
+        width: 8rem;
+    }
+}
+
+
+
+.info-title {
+    font-family: var(--font-heading);
+    font-size: clamp(1.8rem, 1.2rem + 1vw, 2.6rem);
+    letter-spacing: 0.06em;
+    text-align: center;
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+
+}
+
+
+.info-text {
+    text-align: left;
+    max-width: 62ch;
+}
+
+.info-text p {
+    margin-top: 5px;
+    line-height: 1.8;
+}
+
+@media (min-width: 900px) {
+    .info-grid {
+        grid-template-columns: 1fr 2fr;
+        align-items: start;
+        /* both start at same top line */
+    }
+
+    .info-title {
+        text-align: center;
+        /* keep centered in its column */
+        padding-right: 0;
+        padding-top: 0.2rem;
+        /* tiny nudge DOWN to match baseline (tweak: 0 to 0.4rem) */
+    }
 }
