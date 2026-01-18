@@ -24,7 +24,7 @@
 .nav-name {
     font-family: var(--font-heading);
     font-weight: 700;
-    font-size: clamp(1.6rem, 1.2rem + 1vw, 2.2rem);
+    font-size: clamp(1.6rem, 1.2rem + 1vw, 3.2rem);
     letter-spacing: 0.02em;
 }
 
@@ -65,4 +65,74 @@
 .hero-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    min-height: 70vh;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    gap: var(--space-5);
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.hero-date {
+    font-family: var(--font-heading);
+    font-size: clamp(4rem, 1.2rem + 1vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+    color: var(--blue-suit);
+}
+
+.hero-time {
+    font-size: 1rem;
+}
+
+.hero-location {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.95rem;
+}
+
+/* Countdown */
+
+.countdown {
+    display: flex;
+    gap: var(--space-4);
+    margin-top: var(--space-4);
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 70px;
+}
+
+.count-number {
+    font-family: var(--font-heading);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+.count-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
 }
