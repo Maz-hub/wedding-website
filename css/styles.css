@@ -8,9 +8,27 @@
 }
 
 
+/* Header */
 .nav-container {
-    padding: var(--space-6) 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    /* Highly transparent, less milky */
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(5px) saturate(115%);
+    -webkit-backdrop-filter: blur(5px) saturate(115%);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+
+    z-index: 1000;
+    padding: var(--space-4) 0;
 }
+
+
+
+
 
 .nav-main {
     display: flex;
@@ -66,6 +84,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     min-height: 70vh;
+    padding-top: clamp(6rem, 10vw, 8rem);
 }
 
 .hero-content {
@@ -115,7 +134,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 70px;
+    min-width: 90px;
 
 
     background: color-mix(in srgb, var(--paper) 80%, white);
@@ -144,4 +163,37 @@
         grid-template-columns: 1fr;
         gap: var(--space-6);
     }
+}
+
+/* Welcome section */
+
+.welcome-section {
+
+    padding-top: clamp(2rem, 3vw, 1.5rem);
+    padding-bottom: clamp(3rem, 6vw, 6rem);
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+
+
+}
+
+.welcome-content {
+    max-width: 720px;
+    margin-inline: auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    background-image: url("../img/divider.svg");
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 100% auto;
+}
+
+.welcome-content p {
+    font-size: 1rem;
+    line-height: 1.7;
 }
