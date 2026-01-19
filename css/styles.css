@@ -361,31 +361,52 @@
     display: grid;
     gap: 1.25rem;
     grid-template-columns: 1fr;
+    align-items: stretch;
 }
 
 .hotel-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
     text-align: center;
     padding: 2.25rem 1.25rem;
     border-radius: 0.9rem;
-    background: color-mix(in srgb, var(--skin) 85%, white);
+    background: color-mix(in srgb, var(--skin) 35%, white);
     box-shadow: rgba(0, 0, 0, 0.04) 0 10px 24px;
     text-decoration: none;
     color: var(--text);
     transition: transform 150ms ease, box-shadow 150ms ease;
 }
 
+.hotel-card--image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+.hotel-card--image img {
+    width: clamp(8rem, 60%, 14rem);
+}
+
+
+
 .hotel-card h3 {
     font-family: var(--font-heading);
-    font-size: 1.35rem;
+    font-size: 1.4rem;
+    font: 900;
     margin: 0 0 0.5rem;
 }
 
 .hotel-card p {
     margin: 0 0 1rem;
     line-height: 1.6;
+    margin-bottom: 1rem;
+    font-weight: 400;
 }
 
 .hotel-link {
+    margin-top: auto;
     display: inline-block;
     font-weight: 700;
     color: var(--blue-suit);
