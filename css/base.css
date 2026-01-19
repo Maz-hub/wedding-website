@@ -82,6 +82,10 @@ select {
     --space-5: 1.5rem;
     --space-6: 2rem;
     --space-7: 3rem;
+    --space-8: 3.5rem;
+    --space-9: 4rem;
+    --space-10: 4.5rem;
+    --space-11: 5rem;
 }
 
 /* ---- 3) Base typography ---- */
