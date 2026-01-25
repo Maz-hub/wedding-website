@@ -236,7 +236,7 @@
     position: absolute;
 
     /* push it further left */
-    left: clamp(-6rem, -8vw, -10rem);
+    left: clamp(-4rem, -8vw, -10rem);
     top: clamp(-1.4rem, -1vw, -1rem);
 
     /* bigger everywhere */
@@ -449,5 +449,53 @@
 @media (min-width: 650px) {
     .hotels-grid-nodiscount {
         grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.bg-light {
+    background: color-mix(in srgb, var(--paper) 60%, white);
+}
+
+/* Footer */
+
+.site-footer {
+    background: var(--blue-suit);
+    color: #fff;
+    padding: clamp(1.8rem, 4vw, 3rem) 1rem;
+}
+
+.footer-inner {
+    width: min(100% - 2rem, 1000px);
+    margin-inline: auto;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.footer-credit a {
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.footer-credit a:hover {
+    text-decoration: underline;
+}
+
+/* Desktop layout */
+@media (min-width: 768px) {
+    .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+
+    .footer-credit {
+        text-align: right;
     }
 }
