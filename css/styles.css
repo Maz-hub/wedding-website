@@ -383,6 +383,12 @@
     align-items: center;
     justify-content: center;
     pointer-events: none;
+
+    background: transparent;
+    border: none;
+    box-shadow: none;
+
+    pointer-events: none;
 }
 
 .hotel-card--image img {
@@ -394,8 +400,9 @@
 .hotel-card h3 {
     font-family: var(--font-heading);
     font-size: 1.4rem;
-    font: 900;
+    font-weight: 900;
     margin: 0 0 0.5rem;
+    padding-bottom: var(--space-3)
 }
 
 .hotel-card p {
@@ -427,5 +434,20 @@
 @media (min-width: 950px) {
     .hotels-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Hotels without discount */
+
+.hotels-grid-nodiscount {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+}
+
+@media (min-width: 650px) {
+    .hotels-grid-nodiscount {
+        grid-template-columns: repeat(2, 1fr);
     }
 }
