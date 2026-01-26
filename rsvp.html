@@ -29,113 +29,177 @@
             <div class="hero-rsvp-content">
                 <div class="hero-rsvp-text">
                     <span class="hero-rsvp-title">RSVP</span>
-                    <span class="hero-sub-title">We can’t wait to celebrate with you. <br>
-                        Please let us know if you’ll be joining us by filling out the form below.</span>
+                    <span class="hero-sub-title">We can't wait to celebrate with you. <br>
+                        Please let us know if you'll be joining us by filling out the form below.</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="rsvp-section" id="rsvp-form">
+            <div class="rsvp-wrap">
+                <form class="rsvp-form" name="rsvp" method="POST" data-netlify="true">
+                    <input type="hidden" name="form-name" value="rsvp">
+
+                    <div class="form-grid">
+                        <!-- Name -->
+                        <div class="field field-full">
+                            <label for="guestName">Your name</label>
+                            <input id="guestName" name="name" type="text" placeholder="Your full name" required>
+                        </div>
+
+                        <!-- Attendance -->
+                        <div class="field">
+                            <label>Will you be attending?</label>
+                            <div class="radio-group">
+                                <label class="radio-pill">
+                                    <input type="radio" name="attendance" value="Yes" required>
+                                    <span>Yes, I'll be there</span>
+                                </label>
+
+                                <label class="radio-pill">
+                                    <input type="radio" name="attendance" value="No">
+                                    <span>Sorry, I can't make it</span>
+                                </label>
+
+                                <label class="radio-pill">
+                                    <input type="radio" name="attendance" value="Not sure yet">
+                                    <span>Not sure yet</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Extra guest -->
+                        <div class="field">
+                            <label>Bringing a plus one?</label>
+                            <div class="radio-group">
+                                <label class="radio-pill">
+                                    <input type="radio" name="extra_guest" value="Yes" required>
+                                    <span>Yes, +1 guest</span>
+                                </label>
+
+                                <label class="radio-pill">
+                                    <input type="radio" name="extra_guest" value="No">
+                                    <span>Just me</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Extra guest name (conditional) -->
+                        <div class="field field-full" id="extraGuestNameField">
+                            <label for="extraGuestName">Guest's name</label>
+                            <input id="extraGuestName" name="extra_guest_name" type="text"
+                                placeholder="Your guest's full name">
+                        </div>
+
+                        <!-- Dietary -->
+                        <div class="field">
+                            <label for="diet">Dietary requirements</label>
+                            <select id="diet" name="dietary" required>
+                                <option value="">Select one</option>
+                                <option>No restrictions</option>
+                                <option>Vegetarian</option>
+                                <option>Vegan</option>
+                                <option>Gluten free</option>
+                                <option>Lactose free</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <!-- Other dietary details (conditional) -->
+                        <div class="field" id="dietDetailsField">
+                            <label for="dietDetails">Please specify</label>
+                            <input id="dietDetails" name="dietary_other" type="text" placeholder="e.g. nut allergy, pescatarian">
+                        </div>
+
+                        <!-- Speech -->
+                        <div class="field field-full">
+                            <label>Would you like to give a speech?</label>
+                            <div class="radio-group radio-group-horizontal">
+                                <label class="radio-pill">
+                                    <input type="radio" name="speech" value="Yes" required>
+                                    <span>Yes, I'd love to</span>
+                                </label>
+
+                                <label class="radio-pill">
+                                    <input type="radio" name="speech" value="No">
+                                    <span>No, thank you</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Notes / Additional info -->
+                        <div class="field field-full">
+                            <label for="notes">Anything else we should know?</label>
+                            <textarea id="notes" name="notes" rows="4" placeholder="Feel free to share any special requests or let us know if you have any questions..."></textarea>
+                        </div>
+
+                        <!-- Submit -->
+                        <div class="field field-submit">
+                            <button class="rsvp-submit" type="submit">Send RSVP</button>
+                            <p class="rsvp-small">Thank you. We can't wait to celebrate with you 🤍</p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section class="gallery-section">
+            <div class="gallery-wrap">
+                <h2 class="gallery-title">Nine Years, One Story</h2>
+                <p class="gallery-subtitle">From our first adventure to saying "I do"</p>
+
+                <div class="photo-gallery">
+                    <div class="photo-item">
+                        <img src="img/2017.jpg" alt="Simon and Federica in 2017">
+                        <span class="photo-year">2017</span>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="img/2018.jpg" alt="Simon and Federica in 2018">
+                        <span class="photo-year">2018</span>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="img/2019.jpg" alt="Simon and Federica in 2019">
+                        <span class="photo-year">2019</span>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="img/2020.jpg" alt="Simon and Federica in 2020">
+                        <span class="photo-year">2020</span>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="img/2021.jpg" alt="Simon and Federica in 2021">
+                        <span class="photo-year">2021</span>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="img/2022.jpg" alt="Simon and Federica in 2022">
+                        <span class="photo-year">2022</span>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="img/2023.jpg" alt="Simon and Federica in 2023">
+                        <span class="photo-year">2023</span>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="img/2024.jpg" alt="Simon and Federica in 2024">
+                        <span class="photo-year">2024</span>
+                    </div>
+
+                    <div class="photo-item">
+                        <img src="img/2025.jpg" alt="Simon and Federica in 2025">
+                        <span class="photo-year">2025</span>
+                    </div>
                 </div>
             </div>
         </section>
     </div>
 
-    <section class="rsvp-section" id="rsvp-form">
-        <div class="rsvp-wrap">
-            <form class="rsvp-form" name="rsvp" method="POST" data-netlify="true">
-                <input type="hidden" name="form-name" value="rsvp">
 
-                <div class="form-grid">
-                    <!-- Name -->
-                    <div class="field">
-                        <label for="guestName">Name</label>
-                        <input id="guestName" name="name" type="text" placeholder="Your full name" required>
-                    </div>
-
-                    <!-- Attendance -->
-                    <div class="field">
-                        <label>Attendance</label>
-                        <div class="radio-group">
-                            <label class="radio-pill">
-                                <input type="radio" name="attendance" value="Yes" required>
-                                <span>Yes, I will be there</span>
-                            </label>
-
-                            <label class="radio-pill">
-                                <input type="radio" name="attendance" value="No">
-                                <span>No, sorry I can’t make it</span>
-                            </label>
-
-                            <label class="radio-pill">
-                                <input type="radio" name="attendance" value="Not sure yet">
-                                <span>I’m not sure yet</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Extra guest -->
-                    <div class="field">
-                        <label>Extra guest</label>
-                        <div class="radio-group">
-                            <label class="radio-pill">
-                                <input type="radio" name="extra_guest" value="Yes" required>
-                                <span>Yes, I will bring an extra guest</span>
-                            </label>
-
-                            <label class="radio-pill">
-                                <input type="radio" name="extra_guest" value="No">
-                                <span>No, I’m coming alone</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Extra guest name -->
-                    <div class="field">
-                        <label for="extraGuestName">If yes, extra guest name</label>
-                        <input id="extraGuestName" name="extra_guest_name" type="text" placeholder="Guest full name">
-                    </div>
-
-                    <!-- Dietary -->
-                    <div class="field">
-                        <label for="diet">Dietary requirements</label>
-                        <select id="diet" name="dietary" required>
-                            <option value="">Select one</option>
-                            <option>No</option>
-                            <option>Vegetarian</option>
-                            <option>Vegan</option>
-                            <option>Gluten free</option>
-                            <option>Lactose free</option>
-                            <option>Other</option>
-                        </select>
-                    </div>
-
-                    <!-- Other dietary details -->
-                    <div class="field">
-                        <label for="dietDetails">If other, please specify</label>
-                        <input id="dietDetails" name="dietary_other" type="text" placeholder="e.g. nut allergy">
-                    </div>
-
-                    <!-- Speech -->
-                    <div class="field">
-                        <label>Speech</label>
-                        <div class="radio-group">
-                            <label class="radio-pill">
-                                <input type="radio" name="speech" value="Yes" required>
-                                <span>I’d like to give a speech</span>
-                            </label>
-
-                            <label class="radio-pill">
-                                <input type="radio" name="speech" value="No">
-                                <span>No, thank you</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Submit -->
-                    <div class="field field--submit">
-                        <button class="rsvp-submit" type="submit">Send RSVP</button>
-                        <p class="rsvp-small">Thank you — we can’t wait to celebrate with you 🤍</p>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </section>
 
 
     <footer class="site-footer">
@@ -152,6 +216,8 @@
             </p>
         </div>
     </footer>
+
+    <script src="js/rsvp.js" defer></script>
 
 </body>
 

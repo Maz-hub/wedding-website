@@ -1,4 +1,27 @@
-/* Top decorative background */
+/* ==================================================================
+   SIMON & FEDERICA WEDDING WEBSITE - STYLES
+   A simple, elegant wedding site with vineyard aesthetic
+   ================================================================== */
+
+
+/* ==================================================================
+   TABLE OF CONTENTS
+   1. TOP DECORATIVE BACKGROUNDS
+   2. NAVIGATION
+   3. HERO SECTIONS
+   4. WELCOME SECTION
+   5. SECTION DIVIDERS
+   6. INFO SECTIONS (Getting There, Accommodation, etc.)
+   7. HOTEL LISTINGS
+   8. RSVP FORM
+   9. PHOTO GALLERY
+   10. FOOTER
+   ================================================================== */
+
+
+/* ==================================================================
+   1. TOP DECORATIVE BACKGROUNDS
+   ================================================================== */
 
 .top-deco {
     background-image: url("../img/bg_grapes.svg");
@@ -16,8 +39,10 @@
 }
 
 
+/* ==================================================================
+   2. NAVIGATION
+   ================================================================== */
 
-/* HOME Header */
 .nav-container {
     position: fixed;
     top: 0;
@@ -35,7 +60,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     width: min(100% - 2rem, 1000px);
     margin-inline: auto;
 }
@@ -51,17 +75,13 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-
     padding: 0.85rem 1.25rem;
     border-radius: 0.75rem;
-
     background: var(--blue-suit);
     color: #fff;
-
     font-size: 1rem;
     font-weight: 700;
     line-height: 1;
-
     box-shadow: var(--shadow);
     text-decoration: none;
     transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
@@ -69,6 +89,8 @@
 
 .nav-btn:hover,
 .nav-btn:focus-visible {
+    background: #556091;
+    /* Fallback for older browsers */
     background: color-mix(in srgb, var(--blue-suit) 85%, black);
     transform: translateY(-1px);
     color: white;
@@ -79,8 +101,11 @@
 }
 
 
-/* Hero */
+/* ==================================================================
+   3. HERO SECTIONS
+   ================================================================== */
 
+/* Homepage Hero */
 .hero-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -88,54 +113,16 @@
     padding-top: clamp(6rem, 10vw, 8rem);
 }
 
-.hero-rsvp-container {
-    display: flex;
-    justify-content: center;
-    /* keep horizontal centering */
-    align-items: flex-start;
-    /* top align */
-
-    min-height: 70vh;
-    padding-top: 4rem;
-    /* adjust: try 3rem if still low */
-    text-align: center;
-}
-
-
 .hero-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
     gap: var(--space-5);
 }
-
-.hero-rsvp-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    text-align: center;
-    gap: var(--space-5);
-}
-
-@media (max-width: 768px) {
-    .hero-content {
-        padding-top: var(--space-7);
-    }
-}
-
 
 .hero-text {
-    display: flex;
-    flex-direction: column;
-    gap: var(--space-3);
-}
-
-.hero-rsvp-text {
     display: flex;
     flex-direction: column;
     gap: var(--space-3);
@@ -149,19 +136,7 @@
     color: var(--blue-suit);
 }
 
-.hero-rsvp-title {
-    font-family: var(--font-heading);
-    font-size: clamp(4rem, 1.2rem + 1vw, 2.2rem);
-    font-weight: 700;
-    margin-bottom: var(--space-6);
-    color: var(--blue-suit);
-}
-
 .hero-time {
-    font-size: 1rem;
-}
-
-.hero-sub-title {
     font-size: 1rem;
 }
 
@@ -172,8 +147,20 @@
     font-size: 0.95rem;
 }
 
-/* Countdown */
+/* Hero Image */
+.hero-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
+.hero-image img {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* Countdown Timer */
 .countdown {
     display: flex;
     gap: var(--space-4);
@@ -185,14 +172,12 @@
     flex-direction: column;
     align-items: center;
     min-width: 90px;
-
-
+    background: rgba(245, 244, 234, 0.8);
+    /* Fallback */
     background: color-mix(in srgb, var(--paper) 80%, white);
     border-radius: 0.75rem;
     padding: 0.75rem 1rem;
     box-shadow: rgba(0, 0, 0, 0.09) 0 6px 18px;
-
-
 }
 
 .count-number {
@@ -208,17 +193,61 @@
     font-family: var(--font-heading);
 }
 
+/* RSVP Hero */
+.hero-rsvp-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 40vh;
+    padding-top: 4rem;
+    text-align: center;
+}
+
+.hero-rsvp-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: var(--space-5);
+}
+
+.hero-rsvp-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.hero-rsvp-title {
+    font-family: var(--font-heading);
+    font-size: clamp(4rem, 1.2rem + 1vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+    color: var(--blue-suit);
+}
+
+.hero-sub-title {
+    font-size: 1rem;
+}
+
+/* Hero Responsive */
 @media (max-width: 768px) {
     .hero-container {
         grid-template-columns: 1fr;
         gap: var(--space-6);
     }
+
+    .hero-content {
+        padding-top: var(--space-7);
+    }
 }
 
-/* Welcome section */
+
+/* ==================================================================
+   4. WELCOME SECTION
+   ================================================================== */
 
 .welcome-section {
-
     padding-top: clamp(2rem, 3vw, 1.5rem);
     padding-bottom: clamp(3rem, 6vw, 6rem);
     padding-left: 1rem;
@@ -229,7 +258,6 @@
     max-width: 720px;
     margin-inline: auto;
     text-align: center;
-
     display: flex;
     flex-direction: column;
     gap: 1.25rem;
@@ -240,32 +268,37 @@
     line-height: 1.7;
 }
 
-/* Divider */
+
+/* ==================================================================
+   5. SECTION DIVIDERS
+   ================================================================== */
 
 .section-divider {
     width: min(100% - 2rem, 1000px);
     margin: clamp(1.25rem, 3vw, 2.25rem) auto;
 }
 
-
 .section-divider img {
     width: 100%;
     height: auto;
 }
 
-/* Info section (Getting there) */
+
+/* ==================================================================
+   6. INFO SECTIONS
+   Basic info sections (Getting There, Accommodation, etc.)
+   ================================================================== */
 
 .info-section {
     padding: clamp(2.5rem, 6vw, 5rem) 1rem;
+    position: relative;
 }
 
 .info-grid {
     width: min(100% - 2rem, 1000px);
     margin-inline: auto;
-
     display: grid;
     gap: var(--space-6);
-
 }
 
 .info-title-wrapper {
@@ -275,69 +308,6 @@
     margin-bottom: 1rem;
 }
 
-.info-icon {
-    position: absolute;
-
-    /* push it further left */
-    left: clamp(-4rem, -8vw, -10rem);
-    top: clamp(-1.4rem, -1vw, -1rem);
-
-    /* bigger everywhere */
-    width: clamp(6.5rem, 12vw, 10rem);
-    height: auto;
-
-    opacity: 1;
-    z-index: 0;
-    pointer-events: none;
-}
-
-.acc-icon {
-    position: absolute;
-
-    /* push it further left */
-    left: clamp(-6rem, -8vw, -10rem);
-    top: clamp(-1.4rem, -1vw, -1rem);
-
-    /* bigger everywhere */
-    width: clamp(6.5rem, 12vw, 10rem);
-    height: 8rem;
-
-    opacity: 1;
-    z-index: 0;
-    pointer-events: none;
-}
-
-@media (min-width: 601px) and (max-width: 900px) {
-    .info-icon {
-        left: -3.5rem;
-        top: -1.2rem;
-        width: 7.5rem;
-    }
-
-    .acc-icon {
-        left: -2.5rem;
-        top: -2rem;
-        width: 7.5rem;
-    }
-}
-
-
-@media (max-width: 600px) {
-    .info-icon {
-        left: -2.5rem;
-        top: -1.3rem;
-        width: 8rem;
-    }
-
-    .acc-icon {
-        left: -1.1rem;
-        top: -2.4rem;
-        width: 8rem;
-    }
-}
-
-
-
 .info-title {
     font-family: var(--font-heading);
     font-size: clamp(1.8rem, 1.2rem + 1vw, 2.6rem);
@@ -346,9 +316,7 @@
     margin-top: 0;
     position: relative;
     z-index: 1;
-
 }
-
 
 .info-text {
     text-align: left;
@@ -360,11 +328,41 @@
     line-height: 1.8;
 }
 
+/* Background utilities for sections */
+.bg-light {
+    background: rgba(245, 244, 234, 0.6);
+    /* Fallback */
+    background: color-mix(in srgb, var(--paper) 60%, white);
+}
+
+/* Decorative background images for sections */
+.section-deco-left {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(120px, 20vw, 200px);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-deco-right {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: clamp(120px, 20vw, 200px);
+    opacity: 0.15;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Desktop 2-column layout */
 @media (min-width: 900px) {
     .info-grid {
         grid-template-columns: 1fr 2fr;
         align-items: start;
-        /* both start at same top line */
     }
 
     .info-title {
@@ -374,7 +372,19 @@
     }
 }
 
-/* Hotels 10% discount */
+/* Hide decorative images on mobile for cleaner look */
+@media (max-width: 768px) {
+
+    .section-deco-left,
+    .section-deco-right {
+        display: none;
+    }
+}
+
+
+/* ==================================================================
+   7. HOTEL LISTINGS
+   ================================================================== */
 
 .hotels-section {
     padding: clamp(2.5rem, 6vw, 5rem) 1rem;
@@ -397,9 +407,10 @@
     max-width: 70ch;
     margin: 0 auto 2rem;
     line-height: 1.7;
-    margin-bottom: var(--space-11)
+    margin-bottom: var(--space-11);
 }
 
+/* Hotels with discount - 3 column grid */
 .hotels-grid {
     display: grid;
     gap: 1.25rem;
@@ -407,6 +418,33 @@
     align-items: stretch;
 }
 
+@media (min-width: 650px) {
+    .hotels-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 950px) {
+    .hotels-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Hotels without discount - 2 column grid */
+.hotels-grid-nodiscount {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    align-items: stretch;
+}
+
+@media (min-width: 650px) {
+    .hotels-grid-nodiscount {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Hotel card styling */
 .hotel-card {
     display: flex;
     flex-direction: column;
@@ -414,6 +452,8 @@
     text-align: center;
     padding: 2.25rem 1.25rem;
     border-radius: 0.9rem;
+    background: rgba(245, 215, 188, 0.35);
+    /* Fallback */
     background: color-mix(in srgb, var(--skin) 35%, white);
     box-shadow: rgba(0, 0, 0, 0.04) 0 10px 24px;
     text-decoration: none;
@@ -421,31 +461,18 @@
     transition: transform 150ms ease, box-shadow 150ms ease;
 }
 
-.hotel-card--image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    pointer-events: none;
-
-    background: transparent;
-    border: none;
-    box-shadow: none;
-
-    pointer-events: none;
+.hotel-card:hover,
+.hotel-card:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: rgba(0, 0, 0, 0.10) 0 14px 32px;
 }
-
-.hotel-card--image img {
-    width: clamp(8rem, 60%, 14rem);
-}
-
-
 
 .hotel-card h3 {
     font-family: var(--font-heading);
     font-size: 1.4rem;
     font-weight: 900;
     margin: 0 0 0.5rem;
-    padding-bottom: var(--space-3)
+    padding-bottom: var(--space-3);
 }
 
 .hotel-card p {
@@ -462,168 +489,396 @@
     color: var(--blue-suit);
 }
 
-.hotel-card:hover,
-.hotel-card:focus-visible {
-    transform: translateY(-2px);
-    box-shadow: rgba(0, 0, 0, 0.10) 0 14px 32px;
+/* Decorative image card */
+.hotel-card--image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    pointer-events: none;
 }
 
-@media (min-width: 650px) {
-    .hotels-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+.hotel-card--image img {
+    width: clamp(8rem, 60%, 14rem);
 }
 
-@media (min-width: 950px) {
-    .hotels-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
 
-/* Hotels without discount */
-
-.hotels-grid-nodiscount {
-    display: grid;
-    gap: 1.25rem;
-    grid-template-columns: 1fr;
-    align-items: stretch;
-}
-
-@media (min-width: 650px) {
-    .hotels-grid-nodiscount {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-.bg-light {
-    background: color-mix(in srgb, var(--paper) 60%, white);
-}
-
-/* RSVP Form */
+/* ==================================================================
+   8. RSVP FORM
+   ================================================================== */
 
 .rsvp-section {
-    padding: clamp(2.5rem, 6vw, 5rem) 1rem;
+    padding: clamp(2.5rem, 6vw, 5rem) 1rem clamp(4rem, 8vw, 7rem);
 }
 
 .rsvp-wrap {
-    width: min(100% - 2rem, 1000px);
+    width: min(100% - 2rem, 900px);
     margin-inline: auto;
 }
 
 .rsvp-form {
-    background: color-mix(in srgb, var(--skin) 18%, white);
-    border-radius: 1.25rem;
-    padding: clamp(1.25rem, 3vw, 2rem);
-    box-shadow: rgba(0, 0, 0, 0.05) 0 12px 30px;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(8px);
+    border-radius: 1.5rem;
+    padding: clamp(2rem, 4vw, 3rem);
+    box-shadow:
+        rgba(0, 0, 0, 0.03) 0 2px 8px,
+        rgba(0, 0, 0, 0.05) 0 12px 32px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
 }
 
+/* Form grid layout */
 .form-grid {
     display: grid;
-    gap: 1.25rem;
+    gap: 1.75rem;
     grid-template-columns: 1fr;
-    /* mobile */
 }
 
-@media (min-width: 900px) {
+@media (min-width: 768px) {
     .form-grid {
-        grid-template-columns: 1fr 1fr;
-        /* desktop 2 columns */
-        align-items: start;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 1.5rem;
     }
 
-    .field--submit {
+    .field-full {
         grid-column: 1 / -1;
-        /* full width on desktop */
     }
+
+    .field-submit {
+        grid-column: 1 / -1;
+        margin-top: 1rem;
+    }
+}
+
+/* Form fields */
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.65rem;
 }
 
 .field label {
-    display: block;
     font-weight: 700;
-    margin-bottom: 0.5rem;
-    text-align: left;
+    font-size: 0.95rem;
+    color: var(--text);
+    letter-spacing: 0.01em;
 }
 
-.field input,
-.field select {
+/* Text inputs, selects, and textareas */
+.field input:not([type="radio"]),
+.field select,
+.field textarea {
     width: 100%;
-    padding: 0.9rem 1rem;
+    padding: 1rem 1.15rem;
     border-radius: 0.85rem;
-    border: 1px solid var(--border);
+    border: 1.5px solid rgba(14, 14, 13, 0.15);
+    /* Fallback */
+    border: 1.5px solid color-mix(in srgb, var(--ink) 15%, white);
     background: #fff;
     color: var(--text);
+    font-size: 1rem;
     outline: none;
+    transition: all 200ms ease;
 }
 
-.field input:focus,
-.field select:focus {
-    border-color: color-mix(in srgb, var(--blue-suit) 55%, white);
-    box-shadow: rgba(0, 0, 0, 0.06) 0 0 0 4px;
+.field textarea {
+    font-family: var(--font-body);
+    resize: vertical;
+    min-height: 100px;
 }
 
-/* Radio pills */
+.field input:not([type="radio"]):focus,
+.field select:focus,
+.field textarea:focus {
+    border-color: var(--blue-suit);
+    box-shadow:
+        0 0 0 3px rgba(100, 114, 165, 0.15),
+        /* Fallback */
+        0 0 0 3px color-mix(in srgb, var(--blue-suit) 15%, white),
+        rgba(0, 0, 0, 0.04) 0 4px 12px;
+    transform: translateY(-1px);
+}
 
+.field textarea::placeholder,
+.field input:not([type="radio"])::placeholder {
+    color: rgba(14, 14, 13, 0.4);
+    /* Fallback */
+    color: color-mix(in srgb, var(--ink) 40%, white);
+}
+
+/* Custom select dropdown arrow */
+/* This is an inline SVG encoded as a data URI - creates a custom down arrow */
+.field select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' viewBox='0 0 12 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%230e0e0d' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    padding-right: 2.5rem;
+}
+
+/* Radio button groups */
 .radio-group {
-    display: grid;
-    gap: 0.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
 }
 
+.radio-group-horizontal {
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+    .radio-group-horizontal .radio-pill {
+        flex: 1;
+        justify-content: center;
+        text-align: center;
+        min-width: 0;
+    }
+}
+
+/* Radio pill styling */
 .radio-pill {
+    position: relative;
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-
-    padding: 0.85rem 1rem;
+    gap: 0.85rem;
+    padding: 1rem 1.15rem;
     border-radius: 0.85rem;
-    border: 1px solid var(--border);
+    border: 1.5px solid rgba(14, 14, 13, 0.15);
+    /* Fallback */
+    border: 1.5px solid color-mix(in srgb, var(--ink) 15%, white);
     background: #fff;
     cursor: pointer;
+    transition: all 200ms ease;
 }
 
-.radio-pill input {
-    width: 1.1rem;
-    height: 1.1rem;
+.radio-pill:hover {
+    border-color: rgba(100, 114, 165, 0.6);
+    /* Fallback */
+    border-color: color-mix(in srgb, var(--blue-suit) 60%, white);
+    box-shadow: rgba(0, 0, 0, 0.04) 0 2px 8px;
+}
+
+.radio-pill input[type="radio"] {
+    width: 1.15rem;
+    height: 1.15rem;
+    cursor: pointer;
+    accent-color: var(--blue-suit);
+}
+
+.radio-pill input[type="radio"]:checked+span {
+    font-weight: 600;
+}
+
+.radio-pill:has(input:checked) {
+    border-color: var(--blue-suit);
+    background: rgba(100, 114, 165, 0.08);
+    /* Fallback */
+    background: color-mix(in srgb, var(--blue-suit) 8%, white);
+    box-shadow:
+        0 0 0 2px rgba(100, 114, 165, 0.2),
+        /* Fallback */
+        0 0 0 2px color-mix(in srgb, var(--blue-suit) 20%, white),
+        rgba(0, 0, 0, 0.04) 0 4px 12px;
 }
 
 .radio-pill span {
-    line-height: 1.35;
-    font-weight: 500;
+    line-height: 1.4;
+    font-size: 0.95rem;
 }
 
+/* Submit button */
 .rsvp-submit {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
     width: 100%;
-    padding: 1rem 1.25rem;
-    border-radius: 0.9rem;
+    padding: 1.15rem 2rem;
+    border-radius: 1rem;
     border: none;
     cursor: pointer;
-
     background: var(--blue-suit);
     color: #fff;
     font-weight: 800;
-    font-size: 1rem;
-    box-shadow: var(--shadow);
-    transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+    font-size: 1.05rem;
+    letter-spacing: 0.02em;
+    box-shadow:
+        rgba(0, 0, 0, 0.1) 0 4px 12px,
+        rgba(0, 0, 0, 0.08) 0 12px 28px;
+    transition: all 200ms ease;
 }
 
 .rsvp-submit:hover,
 .rsvp-submit:focus-visible {
-    transform: translateY(-1px);
-    box-shadow: rgba(0, 0, 0, 0.14) 0 14px 30px;
+    transform: translateY(-2px);
+    background: #5a6798;
+    /* Fallback */
+    background: color-mix(in srgb, var(--blue-suit) 90%, black);
+    box-shadow:
+        rgba(0, 0, 0, 0.12) 0 8px 20px,
+        rgba(0, 0, 0, 0.1) 0 16px 36px;
+}
+
+.rsvp-submit:active {
+    transform: translateY(0);
 }
 
 .rsvp-small {
-    margin-top: 0.75rem;
+    margin-top: 1rem;
     font-size: 0.9rem;
-    opacity: 0.85;
+    opacity: 0.75;
     text-align: center;
+    line-height: 1.5;
 }
 
 
-/* Footer */
+/* ==================================================================
+   9. PHOTO GALLERY (Timeline)
+   ================================================================== */
+
+.gallery-section {
+    padding: clamp(3rem, 8vw, 6rem) 1rem clamp(4rem, 10vw, 7rem);
+    background: linear-gradient(to bottom,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(245, 244, 234, 0.3) 100%);
+}
+
+.gallery-wrap {
+    width: min(100% - 2rem, 1200px);
+    margin-inline: auto;
+}
+
+.gallery-title {
+    font-family: var(--font-heading);
+    font-size: clamp(2rem, 1.5rem + 1.5vw, 3rem);
+    letter-spacing: 0.04em;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    color: var(--blue-suit);
+}
+
+.gallery-subtitle {
+    text-align: center;
+    font-size: 1.05rem;
+    color: var(--muted);
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+    max-width: 50ch;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Photo grid - responsive masonry layout */
+.photo-gallery {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+}
+
+/* Mobile: stack all photos */
+@media (max-width: 767px) {
+    .photo-gallery {
+        gap: 1.5rem;
+    }
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .photo-gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+
+/* Desktop: masonry-style grid with 3 columns */
+@media (min-width: 1024px) {
+    .photo-gallery {
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 240px;
+        gap: 1.25rem;
+    }
+
+    /* Portrait images span 2 rows */
+    .photo-item:nth-child(2),
+    /* 2018 */
+    .photo-item:nth-child(3),
+    /* 2019 */
+    .photo-item:nth-child(4),
+    /* 2020 */
+    .photo-item:nth-child(7),
+    /* 2023 */
+    .photo-item:nth-child(8),
+    /* 2024 */
+    .photo-item:nth-child(9) {
+        /* 2025 */
+        grid-row: span 2;
+    }
+
+    /* Landscape images span 1 row */
+    .photo-item:nth-child(1),
+    /* 2017 */
+    .photo-item:nth-child(5),
+    /* 2021 */
+    .photo-item:nth-child(6) {
+        /* 2022 */
+        grid-row: span 1;
+    }
+}
+
+/* Photo item styling */
+.photo-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    box-shadow:
+        rgba(0, 0, 0, 0.06) 0 4px 12px,
+        rgba(0, 0, 0, 0.04) 0 12px 28px;
+    transition: all 300ms ease;
+    background: #fff;
+}
+
+.photo-item:hover {
+    transform: translateY(-4px) scale(1.01);
+    box-shadow:
+        rgba(0, 0, 0, 0.1) 0 8px 20px,
+        rgba(0, 0, 0, 0.08) 0 16px 40px;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Year label on photos */
+.photo-year {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(8px);
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--blue-suit);
+    letter-spacing: 0.05em;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    transition: all 250ms ease;
+}
+
+.photo-item:hover .photo-year {
+    transform: translateY(-2px);
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: rgba(0, 0, 0, 0.15) 0 6px 16px;
+}
+
+
+/* ==================================================================
+   10. FOOTER
+   ================================================================== */
 
 .site-footer {
     background: var(--blue-suit);
@@ -634,11 +889,9 @@
 .footer-inner {
     width: min(100% - 2rem, 1000px);
     margin-inline: auto;
-
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
-
     text-align: center;
     font-size: 0.9rem;
 }
@@ -653,7 +906,7 @@
     text-decoration: underline;
 }
 
-/* Desktop layout */
+/* Desktop footer layout */
 @media (min-width: 768px) {
     .footer-inner {
         flex-direction: row;
