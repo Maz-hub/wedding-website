@@ -11,30 +11,147 @@
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Patrick+Hand&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/styles.css">
 
-    <title>RSVP SIMON & FEDERICA</title>
+    <title> SIMON 🤍 FEDERICA</title>
 </head>
 
 <body>
+    <div class="top-deco-rsvp">
+        <header class="nav-container">
+            <nav class="nav-main">
+                <a href="index.html" class="nav-name">SIMON & FEDERICA</a>
+                <a href="index.html" class="nav-btn">HOME</a>
+            </nav>
+        </header>
+        <section class="hero-rsvp-container">
+            <div class="hero-rsvp-content">
+                <div class="hero-rsvp-text">
+                    <span class="hero-rsvp-title">RSVP</span>
+                    <span class="hero-sub-title">We can’t wait to celebrate with you. <br>
+                        Please let us know if you’ll be joining us by filling out the form below.</span>
+                </div>
+            </div>
+        </section>
+    </div>
 
-    <!--
-    
-    RSVP (form to fill in)
+    <section class="rsvp-section" id="rsvp-form">
+        <div class="rsvp-wrap">
+            <form class="rsvp-form" name="rsvp" method="POST" data-netlify="true">
+                <input type="hidden" name="form-name" value="rsvp">
 
-Name : …
+                <div class="form-grid">
+                    <!-- Name -->
+                    <div class="field">
+                        <label for="guestName">Name</label>
+                        <input id="guestName" name="name" type="text" placeholder="Your full name" required>
+                    </div>
 
-Attendance : Yes I will be there / No sorry I can’t make it / I’m not sure yet I’ll let you know soon
+                    <!-- Attendance -->
+                    <div class="field">
+                        <label>Attendance</label>
+                        <div class="radio-group">
+                            <label class="radio-pill">
+                                <input type="radio" name="attendance" value="Yes" required>
+                                <span>Yes, I will be there</span>
+                            </label>
 
-Extra guest : Yes I will be bringing an extra guest / No I’m coming alone
-If yes name of the extra guest :
+                            <label class="radio-pill">
+                                <input type="radio" name="attendance" value="No">
+                                <span>No, sorry I can’t make it</span>
+                            </label>
 
-Dietary requirements or intolerances : No / Vegetarian / Vegan / Gluten free / lactose free / other
+                            <label class="radio-pill">
+                                <input type="radio" name="attendance" value="Not sure yet">
+                                <span>I’m not sure yet</span>
+                            </label>
+                        </div>
+                    </div>
 
-Speech : I’d like to give a speech / No thank you very much
+                    <!-- Extra guest -->
+                    <div class="field">
+                        <label>Extra guest</label>
+                        <div class="radio-group">
+                            <label class="radio-pill">
+                                <input type="radio" name="extra_guest" value="Yes" required>
+                                <span>Yes, I will bring an extra guest</span>
+                            </label>
 
-    
-    -->
+                            <label class="radio-pill">
+                                <input type="radio" name="extra_guest" value="No">
+                                <span>No, I’m coming alone</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Extra guest name -->
+                    <div class="field">
+                        <label for="extraGuestName">If yes, extra guest name</label>
+                        <input id="extraGuestName" name="extra_guest_name" type="text" placeholder="Guest full name">
+                    </div>
+
+                    <!-- Dietary -->
+                    <div class="field">
+                        <label for="diet">Dietary requirements</label>
+                        <select id="diet" name="dietary" required>
+                            <option value="">Select one</option>
+                            <option>No</option>
+                            <option>Vegetarian</option>
+                            <option>Vegan</option>
+                            <option>Gluten free</option>
+                            <option>Lactose free</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Other dietary details -->
+                    <div class="field">
+                        <label for="dietDetails">If other, please specify</label>
+                        <input id="dietDetails" name="dietary_other" type="text" placeholder="e.g. nut allergy">
+                    </div>
+
+                    <!-- Speech -->
+                    <div class="field">
+                        <label>Speech</label>
+                        <div class="radio-group">
+                            <label class="radio-pill">
+                                <input type="radio" name="speech" value="Yes" required>
+                                <span>I’d like to give a speech</span>
+                            </label>
+
+                            <label class="radio-pill">
+                                <input type="radio" name="speech" value="No">
+                                <span>No, thank you</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="field field--submit">
+                        <button class="rsvp-submit" type="submit">Send RSVP</button>
+                        <p class="rsvp-small">Thank you — we can’t wait to celebrate with you 🤍</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p class="footer-message">
+                Simon & Federica 🤍 July 4th 2026
+            </p>
+
+            <p class="footer-credit">
+                Website by
+                <a href="https://www.mazoolander.com/" target="_blank" rel="noopener noreferrer">
+                    Maz
+                </a>
+            </p>
+        </div>
+    </footer>
 
 </body>
 

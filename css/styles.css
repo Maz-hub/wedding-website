@@ -7,28 +7,29 @@
     background-size: 100% auto;
 }
 
+.top-deco-rsvp {
+    background-image: url("../img/rsvp_bg.svg");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100% auto;
+    padding-top: clamp(4rem, 10vw, 7rem);
+}
 
-/* Header */
+
+
+/* HOME Header */
 .nav-container {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-
-    /* Highly transparent, less milky */
     background: rgba(255, 255, 255, 0.10);
     backdrop-filter: blur(5px) saturate(115%);
     -webkit-backdrop-filter: blur(5px) saturate(115%);
-
     border-bottom: 1px solid rgba(255, 255, 255, 0.20);
-
     z-index: 1000;
     padding: var(--space-4) 0;
 }
-
-
-
-
 
 .nav-main {
     display: flex;
@@ -87,7 +88,31 @@
     padding-top: clamp(6rem, 10vw, 8rem);
 }
 
+.hero-rsvp-container {
+    display: flex;
+    justify-content: center;
+    /* keep horizontal centering */
+    align-items: flex-start;
+    /* top align */
+
+    min-height: 70vh;
+    padding-top: 4rem;
+    /* adjust: try 3rem if still low */
+    text-align: center;
+}
+
+
 .hero-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    gap: var(--space-5);
+}
+
+.hero-rsvp-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -110,6 +135,12 @@
     gap: var(--space-3);
 }
 
+.hero-rsvp-text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
 .hero-date {
     font-family: var(--font-heading);
     font-size: clamp(4rem, 1.2rem + 1vw, 2.2rem);
@@ -118,7 +149,19 @@
     color: var(--blue-suit);
 }
 
+.hero-rsvp-title {
+    font-family: var(--font-heading);
+    font-size: clamp(4rem, 1.2rem + 1vw, 2.2rem);
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+    color: var(--blue-suit);
+}
+
 .hero-time {
+    font-size: 1rem;
+}
+
+.hero-sub-title {
     font-size: 1rem;
 }
 
@@ -455,6 +498,130 @@
 .bg-light {
     background: color-mix(in srgb, var(--paper) 60%, white);
 }
+
+/* RSVP Form */
+
+.rsvp-section {
+    padding: clamp(2.5rem, 6vw, 5rem) 1rem;
+}
+
+.rsvp-wrap {
+    width: min(100% - 2rem, 1000px);
+    margin-inline: auto;
+}
+
+.rsvp-form {
+    background: color-mix(in srgb, var(--skin) 18%, white);
+    border-radius: 1.25rem;
+    padding: clamp(1.25rem, 3vw, 2rem);
+    box-shadow: rgba(0, 0, 0, 0.05) 0 12px 30px;
+}
+
+.form-grid {
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+    /* mobile */
+}
+
+@media (min-width: 900px) {
+    .form-grid {
+        grid-template-columns: 1fr 1fr;
+        /* desktop 2 columns */
+        align-items: start;
+    }
+
+    .field--submit {
+        grid-column: 1 / -1;
+        /* full width on desktop */
+    }
+}
+
+.field label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: left;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    padding: 0.9rem 1rem;
+    border-radius: 0.85rem;
+    border: 1px solid var(--border);
+    background: #fff;
+    color: var(--text);
+    outline: none;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: color-mix(in srgb, var(--blue-suit) 55%, white);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 0 0 4px;
+}
+
+/* Radio pills */
+
+.radio-group {
+    display: grid;
+    gap: 0.6rem;
+}
+
+.radio-pill {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    padding: 0.85rem 1rem;
+    border-radius: 0.85rem;
+    border: 1px solid var(--border);
+    background: #fff;
+    cursor: pointer;
+}
+
+.radio-pill input {
+    width: 1.1rem;
+    height: 1.1rem;
+}
+
+.radio-pill span {
+    line-height: 1.35;
+    font-weight: 500;
+}
+
+.rsvp-submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border-radius: 0.9rem;
+    border: none;
+    cursor: pointer;
+
+    background: var(--blue-suit);
+    color: #fff;
+    font-weight: 800;
+    font-size: 1rem;
+    box-shadow: var(--shadow);
+    transition: transform 150ms ease, box-shadow 150ms ease, background-color 150ms ease;
+}
+
+.rsvp-submit:hover,
+.rsvp-submit:focus-visible {
+    transform: translateY(-1px);
+    box-shadow: rgba(0, 0, 0, 0.14) 0 14px 30px;
+}
+
+.rsvp-small {
+    margin-top: 0.75rem;
+    font-size: 0.9rem;
+    opacity: 0.85;
+    text-align: center;
+}
+
 
 /* Footer */
 
