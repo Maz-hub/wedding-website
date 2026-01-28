@@ -365,7 +365,7 @@
     }
 }
 
-/* Hide decorative images on mobile for cleaner look */
+/* Hide decorative images on mobile */
 @media (max-width: 768px) {
 
     .section-deco-left,
