@@ -1,21 +1,39 @@
-/* ==========================
-   BASE.CSS
-   Global reset + design tokens
-   ========================== */
+/* ==================================================================
+   SIMON & FEDERICA WEDDING WEBSITE - BASE STYLES
+   Foundation styles: Reset, design tokens, typography, and layout
+   ================================================================== */
 
-/* ---- 1) Reset / sane defaults ---- */
+
+/* ==================================================================
+   1. CSS RESET & DEFAULTS
+   2. ACCESSIBILITY
+   3. DESIGN TOKENS (Colors, Fonts, Spacing)
+   4. BASE TYPOGRAPHY
+   5. LAYOUT SYSTEM (Sticky Footer)
+   6. UTILITY CLASSES
+   ================================================================== */
+
+
+/* ==================================================================
+   1. CSS RESET & DEFAULTS
+   Modern CSS reset for consistent cross-browser rendering
+   ================================================================== */
+
+/* Box sizing reset */
 *,
 *::before,
 *::after {
     box-sizing: border-box;
 }
 
+/* Remove default margins and paddings */
 html,
 body {
     margin: 0;
     padding: 0;
 }
 
+/* Make media elements responsive by default */
 img,
 picture,
 video,
@@ -25,6 +43,7 @@ svg {
     max-width: 100%;
 }
 
+/* Form elements inherit font properties */
 input,
 button,
 textarea,
@@ -32,7 +51,12 @@ select {
     font: inherit;
 }
 
-/* Respect users who prefer reduced motion */
+
+/* ==================================================================
+   2. ACCESSIBILITY
+   Respect user preferences for reduced motion
+   ================================================================== */
+
 @media (prefers-reduced-motion: reduce) {
 
     *,
@@ -45,13 +69,19 @@ select {
     }
 }
 
-/* ---- 2) Design tokens (colors + typography) ---- */
+
+/* ==================================================================
+   3. DESIGN TOKENS
+   Central source of truth for colors, fonts, and spacing
+   ================================================================== */
+
 :root {
-    /* Fonts */
+    /* ---- Typography ---- */
     --font-body: "DM Sans", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
     --font-heading: "Patrick Hand", "DM Sans", system-ui, sans-serif;
 
-    /* Colors Palette */
+    /* ---- Brand Colors ---- */
+    /* Core palette inspired by vineyard summer aesthetic */
     --ink: #0e0e0d;
     --paper: #f5f4ea;
     --blue-suit: #6472a5;
@@ -61,50 +91,76 @@ select {
     --brown: #61554e;
     --red-shoe: #d50c08;
 
-
-    /* Semantic usage */
+    /* ---- Semantic Color Usage ---- */
     --bg: var(--paper);
     --text: var(--ink);
+    --muted: rgba(14, 14, 13, 0.65);
+    /* Fallback for older browsers */
     --muted: color-mix(in srgb, var(--ink) 65%, white);
     --link: var(--blue-suit);
+    --link-hover: #556091;
+    /* Fallback */
     --link-hover: color-mix(in srgb, var(--blue-suit) 80%, black);
-    --border: color-mix(in srgb, var(--ink) 80%, rgb(255, 255, 255));
+    --border: rgba(14, 14, 13, 0.8);
+    /* Fallback */
+    --border: color-mix(in srgb, var(--ink) 80%, white);
 
-    /* Layout */
+    /* ---- Layout Variables ---- */
     --radius: 16px;
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
 
-    /* Spacing scale */
+    /* ---- Spacing Scale ---- */
     --space-1: 0.25rem;
+    /* 4px */
     --space-2: 0.5rem;
+    /* 8px */
     --space-3: 0.75rem;
+    /* 12px */
     --space-4: 1rem;
+    /* 16px */
     --space-5: 1.5rem;
+    /* 24px */
     --space-6: 2rem;
+    /* 32px */
     --space-7: 3rem;
+    /* 48px */
     --space-8: 3.5rem;
+    /* 56px */
     --space-9: 4rem;
+    /* 64px */
     --space-10: 4.5rem;
+    /* 72px */
     --space-11: 5rem;
+    /* 80px */
 }
 
-/* ---- 3) Base typography ---- */
+
+/* ==================================================================
+   4. BASE TYPOGRAPHY
+   Default font settings and text element styles
+   ================================================================== */
+
+/* Root font size and rendering optimization */
 html {
     font-size: 16px;
     color-scheme: light;
     -webkit-text-size-adjust: 100%;
+    /* Prevent font scaling in landscape on iOS */
     text-size-adjust: 100%;
 }
 
+/* Body text defaults */
 body {
     font-family: var(--font-body);
     color: var(--text);
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
+    /* Better font rendering on macOS */
     text-rendering: optimizeLegibility;
+    /* Better kerning and ligatures */
 }
 
-/* Headings */
+/* Heading styles */
 h1,
 h2,
 h3,
@@ -117,11 +173,12 @@ h6 {
     margin: 0;
 }
 
-/* Paragraphs + lists */
+/* Paragraph styles */
 p {
     margin: 0;
 }
 
+/* List styles */
 ul,
 ol {
     margin: 0;
@@ -132,7 +189,7 @@ li {
     margin: 0;
 }
 
-/* Links */
+/* Link styles */
 a {
     color: var(--link);
     font-weight: 700;
@@ -143,16 +200,48 @@ a {
 a:hover,
 a:focus-visible {
     color: var(--link-hover);
-
 }
 
-/* Visible focus */
+/* Visible focus indicator for accessibility */
 :focus-visible {
+    outline: 3px solid rgba(111, 186, 239, 0.7);
+    /* Fallback */
     outline: 3px solid color-mix(in srgb, var(--blue-bike) 70%, white);
     outline-offset: 3px;
 }
 
-/* A simple container helper */
+
+/* ==================================================================
+   5. LAYOUT SYSTEM
+   Sticky footer pattern using flexbox
+   ================================================================== */
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-deco,
+.top-deco-rsvp {
+    flex: 1 0 auto;
+}
+
+.site-footer {
+    flex-shrink: 0;
+}
+
+
+/* ==================================================================
+   6. UTILITY CLASSES
+   Reusable helper classes
+   ================================================================== */
+
+/* Centered content container with max-width */
 .container {
     width: min(100% - 2rem, 1000px);
     margin-inline: auto;
