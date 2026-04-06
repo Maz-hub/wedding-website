@@ -18,14 +18,22 @@
    ================================================================== */
 
 .top-deco {
-    background-image: url("../img/bg_grapes.svg");
+    background-image: url("../img/bg_grapes.webp");
+    background-image: image-set(
+        url("../img/bg_grapes.webp") type("image/webp"),
+        url("../img/bg_grapes.png") type("image/png")
+    );
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 100% auto;
 }
 
 .top-deco-rsvp {
-    background-image: url("../img/rsvp_bg.svg");
+    background-image: url("../img/rsvp_bg.webp");
+    background-image: image-set(
+        url("../img/rsvp_bg.webp") type("image/webp"),
+        url("../img/rsvp_bg.png") type("image/png")
+    );
     background-repeat: no-repeat;
     background-position: top center;
     background-size: 100% auto;
